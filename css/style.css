@@ -17,9 +17,19 @@ p {
 }
 
 img {
-	width: 100%
+	width: 100%;
+	height: auto;
 }
-//links
+
+div.custom1 {
+	background-color: #95f4eb;
+}
+
+div.custom2 {
+	background-color: #8ee1ff;
+}
+
+/*links*/
 
 a:link { color: #00c; background: transparent; }
 a:visited { color: #003d99; background: transparent; }
@@ -35,18 +45,57 @@ h4 { font: 100%; font-weight: strong; font-family: Arial, san-serif; }
 h5 { font: 100%; font-style: italic; font-family: san-serif; }
 h6 { font: 170%; font-variant: small-caps; font-family: san-serif; }
 
-@media (min-width: 768px) 
-and (max-width: 992px)
-and (orientation:landscape){
-	custom_landscape {
-		visibility: visible;
+/*media queries*/
+/*Small Devices*/
+@media only screen
+	and (max-width : 768px){
+		body.custombody{
+			background-color: black;
+			color: white;
+		}
+		img.customimg{
+			padding: 15px;
+		}
 	}
-}
 
-@media (min-width: 768px) 
-and (max-width: 992px)
-and (orientation:portrait){
-	custom_landscape {
-		visibility: hidden;
+/*Medium decices*/
+/*If it is NOT in landscape, do not display*/
+@media only screen
+	and (min-width : 768px)
+	and (max-width : 992px)
+	and (orientation : portrait){
+		div.hideme{
+			display: none;			
+		}
+		div.custom-sm{
+			width: 50%;
+		}
 	}
-}
+	
+@media only screen
+	and (min-width : 768px)
+	and (max-width : 992px)
+	and (orientation : landscape){
+		div.custom-sm{
+			width: 33.33%;
+		}
+		body.custombody{
+			background-color: lightgrey;
+			font: black;
+		}
+		ul.customul{
+			list-style-type: none;
+		}
+	}
+	
+/*Large devices*/
+@media only screen
+	and (min-width : 992px){
+		body.custombody{
+			background-color: white;
+			color: black;
+		}
+		.name{
+			font-size: 48px;
+		}
+	}
